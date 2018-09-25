@@ -73,6 +73,17 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        Scanner lineScanner = new Scanner(System.in);
+        System.out.println("Type in the hitpoints, a number between 1 and 50: ");
+        int hP = lineScanner.nextInt();
+        tempPokemon.hitPoints = hP;
+        System.out.println("Type in the attack level, a number between 1 and 49: ");
+        int attacker = lineScanner.nextInt();
+        tempPokemon.attackLevel = attacker;
+        System.out.println("Type in the defense level, a number 1 and 49: ");
+        int def = lineScanner.nextInt();
+        tempPokemon.defenseLevel = def;
+
         return tempPokemon;
     }
 
@@ -90,7 +101,14 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
-        System.out.println("Implement me!");
+        if(firstPokemon.hitPoints > secondPokemon.hitPoints) {
+            System.out.println(firstPokemon.name + " is ahead");
+        } else if (secondPokemon.hitPoints > firstPokemon.hitPoints) {
+            System.out.println(secondPokemon.name + " is ahead");
+        } else {
+            System.out.println("Both " + firstPokemon.name + " and " + secondPokemon.name + " are tied");
+        }
+
     }
 
     /**
@@ -101,7 +119,14 @@ public class Colosseum {
      * Write this function.
      */
     public static void determineWinner() {
-        System.out.println("Implement me!");
+     if(firstPokemon.hitPoints > secondPokemon.hitPoints) {
+         System.out.println("The winner is " + firstPokemon.name);
+         return;
+     }
+     System.out.println("The winner is " + secondPokemon.name);
+
+
+
     }
 
     /**
